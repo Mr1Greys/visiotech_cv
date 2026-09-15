@@ -1,0 +1,1 @@
+- [Design subagent quota](design-subagent-quota.md) — Free-mode helper jobs can be denied; keep a direct-build fallback for landing pages.
