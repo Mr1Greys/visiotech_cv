@@ -554,7 +554,21 @@ function Home() {
                 </div>
                 <ArrowLink href="#contact">Обсудить мою задачу</ArrowLink>
               </CornerBox>
-              <CornerBox className="price-card price-service"><span className="price-step">ШАГ 03 / ЗАПУСК</span><h3>Работа системы</h3><strong>от 8 000 <small>₽ / мес</small></strong><p>Или 0 ₽/мес на своём сервере. Под управлением — мониторинг, отчёты, алерты и поддержка.</p><ArrowLink href="#contact" orange>Проверить мою камеру</ArrowLink></CornerBox>
+              <CornerBox className="price-card price-service">
+                <span className="price-step">ШАГ 03 / ЗАПУСК</span>
+                <h3>Работа системы</h3>
+                <strong>от 8 000 <small>₽ / мес</small></strong>
+                <div className="price-copy">
+                  <p>
+                    Или <b>0 ₽/мес</b> на вашем сервере.
+                    Отчёты по часам и дням, алерты в Telegram, мониторинг и поддержка.
+                  </p>
+                  <p>
+                    Платёжка зависит от числа камер — а не от количества позиций.
+                  </p>
+                </div>
+                <ArrowLink href="#contact" orange>Запустить пилот</ArrowLink>
+              </CornerBox>
             </div>
           </div>
         </section>
