@@ -537,7 +537,23 @@ function Home() {
             <SectionHeading tag="Прозрачное ценообразование" title={<>Бесплатно — сначала.<br /><em>Потом два этапа.</em></>} copy="Вы платите не за обещание, а за понятный результат: сначала проверка, затем обучение позиции и работа системы." />
             <div className="pricing-grid">
               <CornerBox className="price-card price-free"><span className="price-step">ШАГ 01 / БЕСПЛАТНО</span><h3>Проверка камеры</h3><strong>0 ₽</strong><p>Честный ответ, получится ли на вашем видео. Короткий демо-ролик с подсчётом. Без обязательств.</p><ArrowLink href="#contact">Начать с проверки</ArrowLink></CornerBox>
-              <CornerBox className="price-card price-training"><span className="price-step">ШАГ 02 / РАЗОВО</span><h3>Обучение счётчика</h3><strong>от 25 000 <small>₽ / позиция</small></strong><p>Настройка под вашу камеру и освещение. Чем больше позиций — тем дешевле каждая.</p><ArrowLink href="#contact">Обсудить задачу</ArrowLink></CornerBox>
+              <CornerBox className="price-card price-training">
+                <span className="price-step">ШАГ 02 / РАЗОВО</span>
+                <h3>Обучение детекции</h3>
+                <strong>от 25 000 <small>₽ / позиция</small></strong>
+                <div className="price-copy">
+                  <p>
+                    <b>Позиция</b> — один тип объекта, которому учится система:
+                    кола, пепси и вода считаются отдельно = <b>3 позиции</b>.
+                    500 одинаковых бутылок — <b>одна позиция</b>.
+                  </p>
+                  <p>
+                    Настройка и калибровка под вашу камеру включены.
+                    Чем больше позиций — тем дешевле каждая.
+                  </p>
+                </div>
+                <ArrowLink href="#contact">Обсудить мою задачу</ArrowLink>
+              </CornerBox>
               <CornerBox className="price-card price-service"><span className="price-step">ШАГ 03 / ЗАПУСК</span><h3>Работа системы</h3><strong>от 8 000 <small>₽ / мес</small></strong><p>Или 0 ₽/мес на своём сервере. Под управлением — мониторинг, отчёты, алерты и поддержка.</p><ArrowLink href="#contact" orange>Проверить мою камеру</ArrowLink></CornerBox>
             </div>
           </div>

@@ -462,6 +462,9 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
 .price-training strong { color: #f5f6f8; }
 .price-service strong { color: #ff6b4a; }
 .price-card p { margin: 20px 0 28px; color: #8a8f9c; font-size: 12px; line-height: 1.6; }
+.price-copy { display: grid; gap: 12px; margin: 20px 0 28px; }
+.price-copy p { margin: 0; color: #8a8f9c; font-size: 12px; line-height: 1.65; }
+.price-copy b { color: #d7dbe3; font-weight: 600; }
 .price-card .text-link { margin-top: auto; }
 .faq-section { background: #0a0b0f; }
 .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 120px; }
@@ -623,7 +626,7 @@ html { background: #f4f8f6; }
 .section-title em, .eyebrow, .text-link, .text-link-orange { color: #0c9a7d; }
 .eyebrow-orange, .text-link-orange { color: #dd6048; }
 .section-heading-copy, .muted-copy, .cases-header > p, .case-subtitle,
-.reason-card p, .process-content p, .price-card p, .faq-item p,
+.reason-card p, .process-content p, .price-card p, .price-copy p, .faq-item p,
 .form-success p { color: #61716d; }
 .corner-box { border-color: #d4e1dc; }
 .proof-section, .demo-section, .pricing-section { background: #edf4f1; border-color: #dce8e3; }
@@ -798,7 +801,9 @@ html { background: #f4f8f6; }
 .price-card strong { color: #238d75; }
 .metric-card p,
 .reason-card p,
-.price-card p { color: #65756f; }
+.price-card p,
+.price-copy p { color: #65756f; }
+.price-copy b { color: #263532; }
 .metric-index,
 .reason-top,
 .reason-meta,
