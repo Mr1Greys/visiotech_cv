@@ -430,7 +430,35 @@ function Home() {
 
         <section className="demo-section section-pad" id="demo">
           <div className="container-wide demo-grid">
-            <div className="demo-copy"><Tag>Реальные кадры, реальный счёт</Tag><h2 className="section-title">Не рендер.<br /><em>Настоящая точка.</em></h2><p className="muted-copy">Система должна выдерживать не идеальный лабораторный свет, а руки повара, три объекта одновременно и случайную ошибку модели. Поэтому показываем саму механику счёта.</p><div className="demo-points"><span><Check size={14} /> 3 позиции → посчитано 3</span><span><Check size={14} /> перекрытие рукой → трек не сбился</span><span><Check size={14} /> ошибка метки → не засчитано</span></div><ArrowLink href="#contact" orange>Прислать своё видео на проверку</ArrowLink></div>
+            <div className="demo-copy">
+              <Tag>Что анализирует computer vision</Tag>
+              <h2 className="section-title">Не просто обнаруживает объект.<br /><em>Система анализирует происходящее.</em></h2>
+              <p className="muted-copy">Shawa Vision работает не с отдельными кадрами, а с происходящим в видеопотоке. Система определяет объекты, отслеживает их движение, учитывает зоны и последовательность событий, чтобы превращать видео в точные данные для дальнейшего контроля и анализа.</p>
+              <div className="demo-points">
+                <div className="demo-point">
+                  <Check size={14} />
+                  <div>
+                    <strong>Объекты</strong>
+                    <span>Распознаёт нужные объекты и различает их в реальном времени.</span>
+                  </div>
+                </div>
+                <div className="demo-point">
+                  <Check size={14} />
+                  <div>
+                    <strong>Действия</strong>
+                    <span>Отслеживает изменения и последовательность происходящего в кадре.</span>
+                  </div>
+                </div>
+                <div className="demo-point">
+                  <Check size={14} />
+                  <div>
+                    <strong>События</strong>
+                    <span>Фиксирует значимые события и сохраняет их как структурированные данные.</span>
+                  </div>
+                </div>
+              </div>
+              <ArrowLink href="#contact" orange>Прислать своё видео на проверку</ArrowLink>
+            </div>
             <div className="demo-console corner-box">
               <div className="console-top"><span><span className="live-dot" /> DETECTION / LIVE</span><span>FPS 24.0 <i /> LATENCY 84ms</span></div>
               <div className="console-body"><div className="console-big-count">03<small> / 03</small></div><div className="console-label">CONFIRMED OUTPUT</div><div className="console-wave"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div><div className="console-events"><span><b>14:32:06</b> track #042 <em>OPEN</em></span><span><b>14:32:07</b> occlusion <em className="orange-text">RECOVERED</em></span><span><b>14:32:08</b> track #042 <em>CLOSED</em></span></div></div><div className="console-bottom"><span>MODEL: prod-count/v2.4</span><span>PRIVACY MODE: ACTIVE</span><ShieldCheck size={14} /></div>
