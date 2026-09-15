@@ -536,7 +536,20 @@ function Home() {
           <div className="container-wide">
             <SectionHeading tag="Прозрачное ценообразование" title={<>Бесплатно — сначала.<br /><em>Потом два этапа.</em></>} copy="Вы платите не за обещание, а за понятный результат: сначала проверка, затем обучение позиции и работа системы." />
             <div className="pricing-grid">
-              <CornerBox className="price-card price-free"><span className="price-step">ШАГ 01 / БЕСПЛАТНО</span><h3>Проверка камеры</h3><strong>0 ₽</strong><p>Честный ответ, получится ли на вашем видео. Короткий демо-ролик с подсчётом. Без обязательств.</p><ArrowLink href="#contact">Начать с проверки</ArrowLink></CornerBox>
+              <CornerBox className="price-card price-free">
+                <span className="price-step">ШАГ 01 / БЕСПЛАТНО</span>
+                <h3>Демо на вашей записи</h3>
+                <strong>0 ₽</strong>
+                <div className="price-copy">
+                  <p>
+                    Пришлите 10–15 минут видео или доступ к камере.
+                    За 1–2 дня вернём демо-ролик с детекцией на вашем объекте
+                    и честный вердикт: получится или нет.
+                  </p>
+                  <p>Без обязательств.</p>
+                </div>
+                <ArrowLink href="#contact">Проверить мою камеру</ArrowLink>
+              </CornerBox>
               <CornerBox className="price-card price-training">
                 <span className="price-step">ШАГ 02 / РАЗОВО</span>
                 <h3>Обучение детекции</h3>
