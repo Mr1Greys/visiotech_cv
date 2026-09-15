@@ -534,54 +534,98 @@ function Home() {
 
         <section className="pricing-section section-pad" id="pricing">
           <div className="container-wide">
-            <SectionHeading tag="Прозрачное ценообразование" title={<>Бесплатно — сначала.<br /><em>Потом два этапа.</em></>} copy="Вы платите не за обещание, а за понятный результат: сначала проверка, затем обучение позиции и работа системы." />
+            <SectionHeading
+              tag="Прозрачное ценообразование"
+              title={<>Бесплатно — сначала.<br /><em>Потом два этапа.</em></>}
+              copy="Вы платите не за обещание, а за понятный результат: сначала проверка, затем обучение позиции и работа системы."
+            />
+
             <div className="pricing-grid">
               <CornerBox className="price-card price-free">
-                <span className="price-step">ШАГ 01 / БЕСПЛАТНО</span>
-                <h3>Демо на вашей записи</h3>
+                <span className="price-step">ШАГ 1 · БЕСПЛАТНО</span>
+                <h3>Бесплатная проверка</h3>
                 <strong>0 ₽</strong>
-                <div className="price-copy">
-                  <p>
-                    Пришлите 10–15 минут видео или доступ к камере.
-                    За 1–2 дня вернём демо-ролик с детекцией на вашем объекте
-                    и честный вердикт: получится или нет.
-                  </p>
-                  <p>Без обязательств.</p>
-                </div>
-                <ArrowLink href="#contact">Проверить мою камеру</ArrowLink>
+                <p className="price-note">1 камера · короткий видеофрагмент</p>
+                <ul className="price-checks">
+                  <li><Check size={14} /> Ответ о технической применимости на вашем ракурсе</li>
+                  <li><Check size={14} /> Короткий демо-ролик с детекцией на вашем объекте</li>
+                  <li><Check size={14} /> Без затрат и обязательств</li>
+                </ul>
+                <ArrowLink href="#contact">Загрузить видео для проверки</ArrowLink>
               </CornerBox>
+
               <CornerBox className="price-card price-training">
-                <span className="price-step">ШАГ 02 / РАЗОВО</span>
-                <h3>Обучение детекции</h3>
-                <strong>от 25 000 <small>₽ / позиция</small></strong>
-                <div className="price-copy">
-                  <p>
-                    <b>Позиция</b> — один тип объекта, которому учится система:
-                    кола, пепси и вода считаются отдельно = <b>3 позиции</b>.
-                    500 одинаковых бутылок — <b>одна позиция</b>.
-                  </p>
-                  <p>
-                    Настройка и калибровка под вашу камеру включены.
-                    Чем больше позиций — тем дешевле каждая.
-                  </p>
-                </div>
-                <ArrowLink href="#contact">Обсудить мою задачу</ArrowLink>
+                <span className="price-step">ШАГ 2 · РАЗОВАЯ НАСТРОЙКА</span>
+                <h3>Обучение модели под ваши задачи</h3>
+                <strong>15 000 – 7 000 <small>₽ / позиция</small></strong>
+                <p className="price-note">Разово · чем больше позиций, тем дешевле</p>
+                <ul className="price-checks">
+                  <li><Check size={14} /> Позиция детекции — один класс объекта (кола ≠ пепси)</li>
+                  <li><Check size={14} /> 500 одинаковых стаканов = одна позиция</li>
+                  <li><Check size={14} /> Обучение, настройка и калибровка камеры включены</li>
+                  <li><Check size={14} /> Скидки при объёме от 10 позиций</li>
+                </ul>
+                <ArrowLink href="#contact">Рассчитать стоимость</ArrowLink>
               </CornerBox>
+
               <CornerBox className="price-card price-service">
-                <span className="price-step">ШАГ 03 / ЗАПУСК</span>
-                <h3>Работа системы</h3>
-                <strong>от 8 000 <small>₽ / мес</small></strong>
-                <div className="price-copy">
-                  <p>
-                    Или <b>0 ₽/мес</b> на вашем сервере.
-                    Отчёты по часам и дням, алерты в Telegram, мониторинг и поддержка.
-                  </p>
-                  <p>
-                    Платёжка зависит от числа камер — а не от количества позиций.
-                  </p>
-                </div>
-                <ArrowLink href="#contact" orange>Запустить пилот</ArrowLink>
+                <span className="price-step">ШАГ 3 · ЗАПУСК</span>
+                <h3>Эксплуатация системы</h3>
+                <strong>0 ₽ <small>или от 8 000 ₽/мес</small></strong>
+                <p className="price-note">Система должна где-то работать — вы выбираете где</p>
+                <ul className="price-checks">
+                  <li><Check size={14} /> Запускаете сами — 0 ₽ в месяц на своём сервере</li>
+                  <li><Check size={14} /> Или на наших серверах — от 8 000 ₽/мес</li>
+                  <li><Check size={14} /> Полное сопровождение, мониторинг и алерты</li>
+                  <li><Check size={14} /> Ежемесячный отчёт включён</li>
+                </ul>
+                <ArrowLink href="#contact" orange>Выбрать вариант</ArrowLink>
               </CornerBox>
+            </div>
+
+            <div className="pricing-tables">
+              <CornerBox className="rate-card rate-setup">
+                <span className="price-step">РАЗОВАЯ НАСТРОЙКА</span>
+                <h3>Цена за позицию детекции</h3>
+                <p className="rate-lead">
+                  Работа заключается в обучении ИИ под ваш объект, ракурс и освещение.
+                  Чем больше позиций заказываете сразу — тем ниже цена каждой.
+                </p>
+                <div className="rate-rows">
+                  <div className="rate-row"><span>1–9 позиций</span><b>15 000 ₽ каждая</b></div>
+                  <div className="rate-row"><span>10–19 позиций</span><b>10 000 ₽ каждая</b></div>
+                  <div className="rate-row"><span>20+ позиций</span><b>7 000 ₽ каждая</b></div>
+                </div>
+                <p className="rate-examples">5 позиций = 75 000 ₽ · 10 позиций = 100 000 ₽</p>
+                <p className="rate-footnote">Вы никогда не платите больше за объём — шкала только снижает цену.</p>
+              </CornerBox>
+
+              <CornerBox className="rate-card rate-monthly">
+                <span className="price-step">ЕЖЕМЕСЯЧНОЕ ОБСЛУЖИВАНИЕ</span>
+                <h3>Цена за набор камер</h3>
+                <p className="rate-lead">
+                  Наши расходы — это обработка видео, хранение событий, мониторинг и поддержка.
+                  Платёжка зависит от числа камер, а не от количества позиций.
+                </p>
+                <div className="rate-rows">
+                  <div className="rate-row"><span>1 камера</span><b>от 8 000 ₽/мес</b></div>
+                  <div className="rate-row"><span>2 камеры</span><b>от 12 000 ₽/мес</b></div>
+                  <div className="rate-row"><span>3 камеры</span><b>от 16 000 ₽/мес</b></div>
+                  <div className="rate-row"><span>4–7 камер</span><b>по запросу</b></div>
+                  <div className="rate-row"><span>8+ камер · несколько площадок</span><b>индивидуально</b></div>
+                </div>
+                <p className="rate-examples">Или платите 0 ₽: разверните на своём оборудовании</p>
+                <p className="rate-footnote">Точную стоимость называем после проверки вашей камеры и сценария.</p>
+              </CornerBox>
+            </div>
+
+            <div className="pricing-closing">
+              <p>
+                Все цены указаны без НДС. Для резидентов Москвы и МО — выезд инженера в течение 48 часов.
+              </p>
+              <button className="btn-primary" onClick={scrollToContact}>
+                Получить бесплатный аудит за 24 часа <ArrowUpRight size={16} />
+              </button>
             </div>
           </div>
         </section>
