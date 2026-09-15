@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: leads
+    description: Lead form submissions
 paths:
   /healthz:
     get:
@@ -24,6 +26,31 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /leads:
+    post:
+      operationId: createLead
+      tags: [leads]
+      summary: Submit lead form
+      description: Accepts a landing-page lead and forwards it to Telegram
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeadRequest"
+      responses:
+        "200":
+          description: Lead delivered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadResponse"
+        "400":
+          description: Invalid payload
+        "502":
+          description: Telegram delivery failed
+        "503":
+          description: Telegram is not configured
 components:
   schemas:
     HealthStatus:
@@ -33,4 +60,34 @@ components:
           type: string
       required:
         - status
+    LeadRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        company:
+          type: string
+        task:
+          type: string
+        city:
+          type: string
+        locations:
+          type: string
+        email:
+          type: string
+          format: email
+        contact:
+          type: string
+      required:
+        - name
+        - company
+        - task
+        - email
+    LeadResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+      required:
+        - ok
 

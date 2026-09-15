@@ -41,9 +41,20 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Secrets
+.env
+.env.local
+.env.*.local
+
+# Package manager
+.pnpm-store/
+
+# Vercel
+.vercel
+
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
-# Replit
+# Local caches
 .cache/
 .local/

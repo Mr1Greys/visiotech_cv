@@ -208,6 +208,8 @@ function Home() {
   const [activeCase, setActiveCase] = useState(cases[0]);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [heroReady, setHeroReady] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -221,9 +223,52 @@ function Home() {
     setMenuOpen(false);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    if (submitting) return;
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: String(data.get('name') ?? '').trim(),
+          company: String(data.get('company') ?? '').trim(),
+          task: String(data.get('task') ?? '').trim(),
+          city: String(data.get('city') ?? '').trim(),
+          locations: String(data.get('locations') ?? '').trim(),
+          email: String(data.get('email') ?? '').trim(),
+          contact: String(data.get('contact') ?? '').trim(),
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { ok?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.ok) {
+        throw new Error(
+          payload?.error ?? 'Не удалось отправить заявку. Попробуйте ещё раз.',
+        );
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Не удалось отправить заявку. Попробуйте ещё раз.',
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -301,7 +346,7 @@ function Home() {
 
         <section className="gap-section section-pad" id="product">
           <div className="container-wide">
-            <SectionHeading tag="Разрыв между цехом и кассой" title={<>Продукция уходит весь день.<br /><em>Вы уверены, что вся?</em></>} copy="Большинство владельцев не имеют объективного способа это проверить. Тетрадка смены и учёт со слов — это не система, а доверие. Разрыв почти никогда не про злой умысел. Это погрешность ручного подсчёта на загруженной смене." />
+            <SectionHeading tag="Разрыв между цехом и кассой" title={<>Контролируйте фактическую выработку,<br /><em>а не отчёты сотрудников.</em></>} copy="Компьютерное зрение фиксирует и считает продукцию непосредственно в процессе работы: шаурму, кальян, блюда кухни и другие операции. Система показывает реальный объём выработки и помогает находить расхождения между производством и продажами." />
             <div className="gap-layout">
               <div className="gap-visual">
                 <div className="gap-visual-head"><span>SHIFT CONTROL / 01</span><b>НЕЗАВИСИМЫЙ УЧЁТ</b></div>
@@ -427,7 +472,7 @@ function Home() {
           <div className="container-wide contact-grid">
             <div className="contact-copy"><Tag orange>Начать с видео</Tag><h2 className="section-title">Дайте камере<br /><em>новую работу.</em></h2><p className="muted-copy">Пришлите короткий ролик с рабочей зоны. Мы проверим ракурс, покажем, что можно считать, и предложим честную схему запуска.</p><div className="contact-meta"><span><Clock3 size={15} /> Ответим в течение 1 рабочего дня</span><span><ShieldCheck size={15} /> Без спама и обязательств</span></div></div>
             <CornerBox className="lead-form-box">
-              {submitted ? <div className="form-success"><div className="success-mark"><Check size={25} /></div><Tag>Заявка отправлена</Tag><h3>Спасибо. Видео уже в очереди.</h3><p>Мы свяжемся с вами в течение одного рабочего дня и подскажем, как лучше проверить точку.</p><button className="btn-outline" onClick={() => setSubmitted(false)}>Отправить ещё одну заявку</button></div> : <form ref={formRef} onSubmit={handleSubmit}><div className="form-head"><span>NEW REQUEST / 01</span><span>FREE ASSESSMENT</span></div><div className="form-row"><label>Имя<input className="input-dark" name="name" required placeholder="Как к вам обращаться?" /></label><label>Название точки / сети<input className="input-dark" name="company" required placeholder="Например, «Шаурма №1»" /></label></div><label>Что хотите считать?<textarea className="input-dark" name="task" required placeholder="Шаурму, чаши, блюда с раздачи..." /></label><div className="form-row"><label>Город<input className="input-dark" name="city" placeholder="Москва" /></label><label>Количество точек<input className="input-dark" name="locations" type="number" min="1" placeholder="1" /></label></div><div className="form-row"><label>Email<input className="input-dark" name="email" type="email" required placeholder="name@company.ru" /></label><label>Telegram / WhatsApp<input className="input-dark" name="contact" placeholder="@username или номер" /></label></div><label>Ссылка на видео <span className="optional">(опционально)</span><input className="input-dark" name="video" type="url" placeholder="https://disk.yandex.ru/..." /></label><button className="btn-primary form-submit" type="submit">Отправить заявку <ArrowUpRight size={16} /></button><p className="form-legal">Нажимая кнопку, вы соглашаетесь на обработку заявки. Никаких рассылок.</p></form>}
+              {submitted ? <div className="form-success"><div className="success-mark"><Check size={25} /></div><Tag>Заявка отправлена</Tag><h3>Спасибо. Видео уже в очереди.</h3><p>Мы свяжемся с вами в течение одного рабочего дня и подскажем, как лучше проверить точку.</p><button className="btn-outline" onClick={() => setSubmitted(false)}>Отправить ещё одну заявку</button></div> : <form ref={formRef} onSubmit={handleSubmit}><div className="form-head"><span>NEW REQUEST / 01</span><span>FREE ASSESSMENT</span></div><div className="form-row"><label>Имя<input className="input-dark" name="name" required placeholder="Как к вам обращаться?" /></label><label>Название точки / сети<input className="input-dark" name="company" required placeholder="Например, «Шаурма №1»" /></label></div><label>Что хотите считать?<textarea className="input-dark" name="task" required placeholder="Шаурму, чаши, блюда с раздачи..." /></label><div className="form-row"><label>Город<input className="input-dark" name="city" placeholder="Москва" /></label><label>Количество точек<input className="input-dark" name="locations" type="number" min="1" placeholder="1" /></label></div><div className="form-row"><label>Email<input className="input-dark" name="email" type="email" required placeholder="name@company.ru" /></label><label>Telegram / WhatsApp<input className="input-dark" name="contact" placeholder="@username или номер" /></label></div>{submitError ? <p className="form-error" role="alert">{submitError}</p> : null}<button className="btn-primary form-submit" type="submit" disabled={submitting}>{submitting ? 'Отправляем…' : 'Отправить заявку'}{submitting ? null : <ArrowUpRight size={16} />}</button><p className="form-legal">Нажимая кнопку, вы соглашаетесь на обработку заявки. Никаких рассылок.</p></form>}
             </CornerBox>
           </div>
         </section>

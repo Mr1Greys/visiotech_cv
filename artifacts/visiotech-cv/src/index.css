@@ -409,6 +409,8 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
 .lead-form-box .input-dark { font-family: var(--app-font-sans); font-size: 13px; }
 .optional { color: #5f6673; }
 .form-submit { width: 100%; margin-top: 4px; }
+.form-submit:disabled { opacity: .72; cursor: wait; transform: none; }
+.form-error { margin: 0; padding: 10px 12px; border: 1px solid #ff6b4a55; background: #ff6b4a12; color: #ff6b4a; font-size: 12px; line-height: 1.45; }
 .form-legal { margin: 0; color: #5f6673; font-size: 10px; line-height: 1.4; text-align: center; }
 .form-success { min-height: 490px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .success-mark { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 29px; border: 1px solid #4dffd3; color: #4dffd3; border-radius: 50%; box-shadow: 0 0 24px #4dffd322; }
@@ -568,6 +570,7 @@ html { background: #f4f8f6; }
 .process-quote { color: #172423; }
 .compat-item { border-color: #d4e1dc; }
 .compat-foot > span, .optional, .form-legal { color: #71807c; }
+.form-error { border-color: rgba(201, 101, 80, .35); background: rgba(201, 101, 80, .08); color: #c96550; }
 .faq-item { border-color: #d4e1dc; }
 .faq-item.open button { color: #0c9a7d; }
 .contact-section {

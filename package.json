@@ -1,18 +1,20 @@
 {
-  "name": "workspace",
+  "name": "visiotech-cv",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@10.5.0",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "dev": "pnpm --filter @workspace/visiotech-cv run dev",
+    "dev:api": "pnpm --filter @workspace/api-server run dev",
+    "build": "pnpm --filter @workspace/visiotech-cv run build",
+    "build:all": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
-  "private": true,
-  "dependencies": {
-    "@replit/connectors-sdk": "^0.4.1"
-  },
   "devDependencies": {
+    "@vercel/node": "^5.5.15",
     "prettier": "^3.9.6",
     "typescript": "~5.9.3"
   }
