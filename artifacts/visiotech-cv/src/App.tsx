@@ -557,7 +557,7 @@ function Home() {
               <CornerBox className="price-card price-training">
                 <span className="price-step">ШАГ 2 · РАЗОВАЯ НАСТРОЙКА</span>
                 <h3>Обучение модели под ваши задачи</h3>
-                <strong>15 000 – 7 000 <small>₽ / позиция</small></strong>
+                <strong>7 000 – 15 000 <small>₽ / позиция</small></strong>
                 <p className="price-note">Разово · чем больше позиций, тем дешевле</p>
                 <ul className="price-checks">
                   <li><Check size={14} /> Позиция детекции — один класс объекта (кола ≠ пепси)</li>
