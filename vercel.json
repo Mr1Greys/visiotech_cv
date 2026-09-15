@@ -3,7 +3,7 @@
   "framework": null,
   "installCommand": "pnpm install",
   "buildCommand": "pnpm --filter @workspace/visiotech-cv run build",
-  "outputDirectory": "artifacts/visiotech-cv/dist/public",
+  "outputDirectory": "artifacts/visiotech-cv/dist",
   "rewrites": [
     {
       "source": "/((?!api/).*)",
