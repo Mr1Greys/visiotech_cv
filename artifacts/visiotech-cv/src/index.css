@@ -747,6 +747,7 @@ html { background: #f4f8f6; }
 .metric-card-orange::before,
 .reason-orange::before,
 .price-service::before,
+.rate-monthly::before,
 .detector-preview-orange::before,
 .detector-preview-orange::after { border-color: #d98973; }
 
