@@ -304,18 +304,21 @@ function Home() {
             <SectionHeading tag="Разрыв между цехом и кассой" title={<>Продукция уходит весь день.<br /><em>Вы уверены, что вся?</em></>} copy="Большинство владельцев не имеют объективного способа это проверить. Тетрадка смены и учёт со слов — это не система, а доверие. Разрыв почти никогда не про злой умысел. Это погрешность ручного подсчёта на загруженной смене." />
             <div className="gap-layout">
               <div className="gap-visual">
-                <div className="gap-label label-made">СДЕЛАНО <b>146</b></div>
+                <div className="gap-visual-head"><span>SHIFT CONTROL / 01</span><b>НЕЗАВИСИМЫЙ УЧЁТ</b></div>
+                <div className="gap-legend"><span className="legend-made"><i /> ГОТОВО НА ТОЧКЕ</span><span className="legend-pos"><i /> ПРОВЕДЕНО ПО КАССЕ</span></div>
+                <div className="gap-label label-made"><span>СДЕЛАНО</span><b>146</b><small>позиций</small></div>
                 <div className="gap-line gap-line-made"><span /></div>
-                <div className="gap-label label-pos">ПО КАССЕ <b>124</b></div>
+                <div className="gap-label label-pos"><span>ПО КАССЕ</span><b>124</b><small>позиций</small></div>
                 <div className="gap-line gap-line-pos"><span /></div>
-                <div className="gap-difference"><span>РАЗРЫВ</span><strong>22</strong><small>ПОЗИЦИИ</small></div>
+                <div className="gap-difference"><span>НЕ УЧТЕНО</span><strong>22</strong><small>ПОЗИЦИИ</small></div>
                 <div className="gap-grid-art" />
-                <div className="gap-foot">SHIFT / 12:00—23:00 <span>UNACCOUNTED OUTPUT</span></div>
+                <div className="gap-foot"><span>СМЕНА / 12:00—23:00</span><b>UNACCOUNTED OUTPUT</b></div>
               </div>
               <div className="metric-stack">
-                <CornerBox className="metric-card metric-card-orange"><span className="metric-index">01 / GAP</span><strong>до 15<span>%</span></strong><p>типичное расхождение между приготовленным и проведённым по кассе без независимого учёта*</p><ArrowDownRight size={18} /></CornerBox>
-                <CornerBox className="metric-card metric-card-mint"><span className="metric-index">02 / SCOPE</span><strong>6<span>+</span></strong><p>сценариев подсчёта: шаурма, кальян, кухня и другие рабочие зоны</p><ArrowDownRight size={18} /></CornerBox>
-                <CornerBox className="metric-card metric-card-dark"><span className="metric-index">03 / HARDWARE</span><strong>0 ₽</strong><p>на новое оборудование, если камера на точке уже подходит для задачи</p><ArrowDownRight size={18} /></CornerBox>
+                <div className="metric-stack-head"><span>ЧТО МЕНЯЕТСЯ ПОСЛЕ ЗАПУСКА</span><b>03 SIGNALS</b></div>
+                <CornerBox className="metric-card metric-card-orange"><span className="metric-index">01 / РИСК ПОТЕРЬ</span><strong>до 15<span>%</span></strong><p>типичное расхождение между приготовленным и проведённым по кассе без независимого учёта*</p><ArrowDownRight size={18} /></CornerBox>
+                <CornerBox className="metric-card metric-card-mint"><span className="metric-index">02 / СЦЕНАРИИ</span><strong>6<span>+</span></strong><p>сценариев подсчёта: шаурма, кальян, кухня и другие рабочие зоны</p><ArrowDownRight size={18} /></CornerBox>
+                <CornerBox className="metric-card metric-card-dark"><span className="metric-index">03 / ОБОРУДОВАНИЕ</span><strong>0 ₽</strong><p>на новое оборудование, если камера на точке уже подходит для задачи</p><ArrowDownRight size={18} /></CornerBox>
               </div>
             </div>
             <p className="footnote">* Оценка по отраслевым данным HoReCa. Точная цифра для вашей точки считается во время бесплатной оценки.</p>
