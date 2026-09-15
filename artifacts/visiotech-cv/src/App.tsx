@@ -203,6 +203,65 @@ function DetectorPreview({ selectedCase }: { selectedCase: (typeof cases)[number
   );
 }
 
+function DemoVisionPanel() {
+  return (
+    <CornerBox className="vision-demo">
+      <div className="vision-demo-top">
+        <span><span className="live-dot" /> FRAME / WORK AREA</span>
+        <span>OBJECT → ZONE → EVENT</span>
+      </div>
+      <div className="vision-demo-stage">
+        <div className="vision-frame">
+          <div className="vision-scene">
+            <div className="vision-glow" />
+            <div className="vision-surface" />
+            <div className="vision-food" />
+            <div className="vision-hand" />
+          </div>
+
+          <div className="vision-layer vision-layer-zone">
+            <span className="vision-zone-box">WORK AREA</span>
+            <span className="vision-layer-tag">ZONE</span>
+          </div>
+
+          <div className="vision-layer vision-layer-object">
+            <span className="vision-object-box">OBJECT</span>
+            <span className="vision-layer-tag">OBJECT</span>
+          </div>
+
+          <div className="vision-layer vision-layer-event">
+            <span className="vision-event-stamp">
+              <b>14:32:06</b>
+              EVENT CONFIRMED
+            </span>
+            <span className="vision-layer-tag">EVENT</span>
+          </div>
+        </div>
+
+        <aside className="vision-event-card" aria-label="Vision event">
+          <div className="vision-event-card-head">
+            <span className="live-dot" />
+            VISION EVENT
+          </div>
+          <strong>Object detected</strong>
+          <dl>
+            <div><dt>Zone</dt><dd>Work area</dd></div>
+            <div><dt>Duration</dt><dd>08.4 sec</dd></div>
+            <div><dt>Status</dt><dd className="is-confirmed">Confirmed</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div className="vision-demo-flow" aria-hidden="true">
+        <span>OBJECT</span>
+        <span className="vision-flow-arrow" />
+        <span>ZONE</span>
+        <span className="vision-flow-arrow" />
+        <span>EVENT</span>
+      </div>
+    </CornerBox>
+  );
+}
+
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCase, setActiveCase] = useState(cases[0]);
@@ -459,10 +518,7 @@ function Home() {
               </div>
               <ArrowLink href="#contact" orange>Прислать своё видео на проверку</ArrowLink>
             </div>
-            <div className="demo-console corner-box">
-              <div className="console-top"><span><span className="live-dot" /> DETECTION / LIVE</span><span>FPS 24.0 <i /> LATENCY 84ms</span></div>
-              <div className="console-body"><div className="console-big-count">03<small> / 03</small></div><div className="console-label">CONFIRMED OUTPUT</div><div className="console-wave"><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /><span /></div><div className="console-events"><span><b>14:32:06</b> track #042 <em>OPEN</em></span><span><b>14:32:07</b> occlusion <em className="orange-text">RECOVERED</em></span><span><b>14:32:08</b> track #042 <em>CLOSED</em></span></div></div><div className="console-bottom"><span>MODEL: prod-count/v2.4</span><span>PRIVACY MODE: ACTIVE</span><ShieldCheck size={14} /></div>
-            </div>
+            <DemoVisionPanel />
           </div>
         </section>
 
