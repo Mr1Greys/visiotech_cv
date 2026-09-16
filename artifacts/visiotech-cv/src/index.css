@@ -260,6 +260,13 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
 .reason-track span:nth-child(4) { height: 14px; opacity: .55; }
 .reason-track span:nth-child(5) { height: 25px; }
 .reason-orange .reason-track span { background: #ff6b4a; }
+.proof-closing {
+  margin: 28px 0 0;
+  max-width: 720px;
+  color: #8a8f9c;
+  font-size: 14px;
+  line-height: 1.65;
+}
 .process-section { background: radial-gradient(ellipse at 80% 40%, #172d2c 0, transparent 32%); }
 .process-list { margin-top: 74px; border-top: 1px solid #232630; }
 .process-row { display: grid; grid-template-columns: 86px 18px 1fr 30px; gap: 20px; align-items: center; min-height: 112px; border-bottom: 1px solid #232630; }
@@ -655,7 +662,7 @@ html { background: #f4f8f6; }
 .section-title em, .eyebrow, .text-link, .text-link-orange { color: #0c9a7d; }
 .eyebrow-orange, .text-link-orange { color: #dd6048; }
 .section-heading-copy, .muted-copy, .cases-header > p, .case-subtitle,
-.reason-card p, .process-content p, .price-card p, .price-note, .price-checks li, .rate-lead, .rate-footnote, .pricing-closing p, .faq-item p,
+.reason-card p, .proof-closing, .process-content p, .price-card p, .price-note, .price-checks li, .rate-lead, .rate-footnote, .pricing-closing p, .faq-item p,
 .form-success p { color: #61716d; }
 .corner-box { border-color: #d4e1dc; }
 .proof-section, .demo-section, .pricing-section { background: #edf4f1; border-color: #dce8e3; }
@@ -844,7 +851,8 @@ html { background: #f4f8f6; }
 .rate-lead,
 .rate-row span,
 .rate-footnote,
-.pricing-closing p { color: #65756f; }
+.pricing-closing p,
+.proof-closing { color: #65756f; }
 .price-checks svg { color: #238d75; }
 .price-service .price-checks svg { color: #c96550; }
 .rate-rows,
