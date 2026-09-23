@@ -125,6 +125,14 @@ const faqItems = [
   ['Если на точке несколько цехов или станций?', 'Можно подключить несколько камер и считать разные зоны. Стоимость управляемого сервиса зависит от камер, а не от числа позиций.'],
 ];
 
+function BrandLink() {
+  return (
+    <a className="brand" href="#" aria-label="visiotech — на главную">
+      <img src="/logo.png" alt="" width={937} height={163} decoding="async" />
+    </a>
+  );
+}
+
 function Tag({ children, orange = false }: { children: ReactNode; orange?: boolean }) {
   return <span className={`eyebrow ${orange ? 'eyebrow-orange' : ''}`}>{children}</span>;
 }
@@ -334,9 +342,7 @@ function Home() {
     <div className="site-shell">
       <header className="site-header">
         <div className="container-wide header-inner">
-          <a className="brand" href="#" aria-label="visiotech_cv — на главную">
-            visiotech<span>_cv</span>
-          </a>
+          <BrandLink />
           <nav className={`main-nav ${menuOpen ? 'is-open' : ''}`}>
             {navItems.map((item) => (
               <a href={item.href} key={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
@@ -657,7 +663,7 @@ function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="container-wide footer-main"><div><a className="brand" href="#">visiotech<span>_cv</span></a><p>Видеоаналитика для HoReCa<br />на камерах, которые у вас уже есть.</p></div><div className="footer-nav"><span>НАВИГАЦИЯ</span>{navItems.map((item) => <a href={item.href} key={item.href}>{item.label}</a>)}</div><div className="footer-nav"><span>КОНТАКТЫ</span><a href="https://t.me/+HecACt91cIQ1OTIy" target="_blank" rel="noopener noreferrer">Telegram <ExternalLink size={12} /></a><a href="#contact">WhatsApp <ExternalLink size={12} /></a><a href="#contact">hello@visiotech.cv <ExternalLink size={12} /></a></div><div className="footer-cta"><span>Готовы увидеть свою цифру?</span><button onClick={scrollToContact}>Проверить камеру <MoveRight size={15} /></button></div></div>
+        <div className="container-wide footer-main"><div><BrandLink /><p>Видеоаналитика для HoReCa<br />на камерах, которые у вас уже есть.</p></div><div className="footer-nav"><span>НАВИГАЦИЯ</span>{navItems.map((item) => <a href={item.href} key={item.href}>{item.label}</a>)}</div><div className="footer-nav"><span>КОНТАКТЫ</span><a href="https://t.me/+HecACt91cIQ1OTIy" target="_blank" rel="noopener noreferrer">Telegram <ExternalLink size={12} /></a><a href="#contact">WhatsApp <ExternalLink size={12} /></a><a href="#contact">hello@visiotech.cv <ExternalLink size={12} /></a></div><div className="footer-cta"><span>Готовы увидеть свою цифру?</span><button onClick={scrollToContact}>Проверить камеру <MoveRight size={15} /></button></div></div>
         <div className="container-wide footer-bottom"><span>© 2026 visiotech_cv</span><span>PRODUCTION COUNTING / RU</span><span>NO FACE DATA / BY DESIGN</span></div>
       </footer>
     </div>
