@@ -376,18 +376,19 @@ function Home() {
               <div className="hero-visual-meta"><span>VISION / PROD-COUNT v2.4</span><span>CAM_04 / ONLINE</span></div>
               <CornerBox className="hero-camera">
                 <div className="camera-screen hero-scene">
-                  <div className="hero-kitchen-light" />
-                  <div className="hero-counter" />
-                  <div className="hero-food hero-food-a" />
-                  <div className="hero-food hero-food-b" />
-                  <div className="hero-food hero-food-c" />
-                  <div className="hero-arm" />
-                  <div className="detector-frame hero-frame-a" />
-                  <div className="detector-frame orange hero-frame-b" />
-                  <div className="detector-frame hero-frame-c" />
-                  <span className="scene-chip chip-a">OPEN <b>0.91</b></span>
-                  <span className="scene-chip chip-b">CLOSED <b>0.94</b></span>
-                  <span className="scene-chip chip-c">TRACK #042</span>
+                  <img
+                    className="hero-photo"
+                    src="/hero-station.jpg"
+                    alt="Повар готовит шаурму на точке, камера над рабочей зоной"
+                    width={768}
+                    height={1024}
+                    fetchPriority="high"
+                  />
+                  <div className="hero-beam" aria-hidden="true" />
+                  <div className="hero-beam-core" aria-hidden="true" />
+                  <span className="hero-cam-lens" aria-hidden="true" />
+                  <div className="detector-frame hero-frame-spit" />
+                  <span className="scene-chip chip-spit">TRACK <b>0.96</b></span>
                   <div className="hero-scan scan-line" />
                   <div className="hero-timestamp"><Clock3 size={12} /> 14:32:08.042</div>
                 </div>
