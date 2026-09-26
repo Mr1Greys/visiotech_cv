@@ -339,7 +339,8 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
 .case-tab:hover { color: #f5f6f8; }
 .case-tab.active { background: #14161c; color: #4dffd3; border-top-color: #4dffd3; }
 .case-tab.active svg { color: #4dffd3; }
-.case-feature { display: grid; grid-template-columns: .78fr 1.22fr; align-items: center; gap: 82px; padding: 68px 0 82px; }
+.case-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 36rem); align-items: center; justify-content: space-between; gap: clamp(2rem, 5vw, 4.5rem); padding: 68px 0 82px; }
+.detector-preview { width: min(100%, 36rem); justify-self: end; }
 .case-copy h3 { margin: 21px 0 17px; color: #f5f6f8; font-size: clamp(3rem, 5vw, 5.4rem); line-height: .9; letter-spacing: -.07em; font-weight: 600; }
 .case-subtitle { max-width: 320px; margin: 0 0 10px; color: #f5f6f8; font-size: 16px; line-height: 1.4; }
 .case-copy .muted-copy { max-width: 320px; font-size: 13px; }
@@ -347,6 +348,8 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
 .case-log b { color: #f5f6f8; font-weight: 400; }
 .log-confirmed { color: #4dffd3; }
 .detector-preview { background: #101217; overflow: hidden; }
+.detector-preview-shawarma { background: #10140f; }
+.case-video { display: block; width: 100%; height: auto; aspect-ratio: 1440 / 882; object-fit: cover; background: #10140f; }
 .detector-preview-orange::before, .detector-preview-orange::after { border-color: #ff6b4a; }
 .preview-topbar, .preview-readout { display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; color: #69707d; font: 9px var(--app-font-mono); }
 .preview-topbar { border-bottom: 1px solid #232630; }
@@ -597,7 +600,8 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
   .hero-inner { gap: 35px; }
   .hero h1 { font-size: clamp(3.6rem, 7vw, 5.4rem); }
   .gap-layout, .demo-grid { gap: 40px; }
-  .case-feature { gap: 40px; }
+  .case-feature { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); gap: 40px; }
+  .detector-preview { width: min(100%, 26rem); }
   .compat-grid, .faq-grid, .contact-grid { gap: 50px; }
   .footer-main { grid-template-columns: 1fr 1fr; }
 }
@@ -646,6 +650,7 @@ textarea.input-dark { min-height: 104px; padding-block: 13px; resize: vertical; 
   .case-tabs { overflow-x: auto; margin-top: 45px; }
   .case-tab { min-width: 145px; padding-inline: 12px; font-size: 13px; }
   .case-feature { padding-block: 48px 60px; }
+  .detector-preview, .detector-preview-shawarma, .case-video { width: 100%; max-width: none; }
   .case-copy h3 { font-size: 4.4rem; }
   .preview-scene { height: 240px; }
   .preview-readout { gap: 10px; flex-wrap: wrap; }

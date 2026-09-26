@@ -172,9 +172,52 @@ function SectionHeading({
   );
 }
 
+function ShawarmaCaseVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      video.pause();
+      video.controls = true;
+      return;
+    }
+    video.muted = true;
+    void video.play().catch(() => {
+      video.controls = true;
+    });
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      className="case-video"
+      src="/cases/shawarma.mp4"
+      poster="/cases/shawarma-poster.jpg"
+      width={1440}
+      height={882}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-label="Подсчёт шаурмы на реальной точке: камера над стойкой"
+    />
+  );
+}
+
 function DetectorPreview({ selectedCase }: { selectedCase: (typeof cases)[number] }) {
   const isHookah = selectedCase.id === 'hookah';
   const isKitchen = selectedCase.id === 'kitchen';
+  if (selectedCase.id === 'shawarma') {
+    return (
+      <CornerBox className="detector-preview detector-preview-shawarma">
+        <ShawarmaCaseVideo />
+      </CornerBox>
+    );
+  }
   return (
     <CornerBox className={`detector-preview detector-preview-${selectedCase.color}`}>
       <div className="preview-topbar">
