@@ -4,18 +4,27 @@ import { Route, Switch, Router as WouterRouter } from 'wouter';
 import {
   ArrowDownRight,
   ArrowUpRight,
+  Cable,
+  Calculator,
+  Camera,
   Check,
+  ChefHat,
   ChevronRight,
+  CircleCheck,
   CirclePlay,
   Clock3,
   ExternalLink,
+  Flame,
+  Info,
   Menu,
   Minus,
   MoveRight,
   Play,
   Plus,
   ScanLine,
+  Server,
   ShieldCheck,
+  Utensils,
   X,
   Zap,
 } from 'lucide-react';
@@ -590,99 +599,159 @@ function Home() {
         </section>
 
         <section className="pricing-section section-pad" id="pricing">
-          <div className="container-wide">
-            <SectionHeading
-              tag="Прозрачное ценообразование"
-              title={<>Сначала проверяем.<br /><em>Потом запускаем.</em></>}
-              copy="Бесплатно оценим видео с вашей камеры, покажем, что система сможет распознавать, и только после этого настроим решение под ваш процесс."
-            />
+          <div className="container-wide offer">
+            <div className="offer-head">
+              <Tag>Подключение и тарифы</Tag>
+              <h2 className="section-title">Обучаем под ваши задачи.<br /><em>Обслуживаем на наших серверах.</em></h2>
+              <p>Используем ваши камеры: подключаемся к RTSP-потоку, настраиваем распознавание нужных продуктов и собираем результаты в личном кабинете. Камеры приобретаются и устанавливаются отдельно.</p>
+              <p className="offer-free"><CircleCheck size={16} aria-hidden="true" /> Проверка видео — бесплатно</p>
+            </div>
 
-            <div className="pricing-grid">
-              <CornerBox className="price-card price-free">
-                <span className="price-step">ШАГ 1 · БЕСПЛАТНО</span>
-                <h3>Бесплатная проверка</h3>
-                <strong>0 ₽</strong>
-                <p className="price-note">1 камера · короткий видеофрагмент</p>
-                <ul className="price-checks">
-                  <li><Check size={14} /> Ответ о технической применимости на вашем ракурсе</li>
-                  <li><Check size={14} /> Короткий демо-ролик с детекцией на вашем объекте</li>
-                  <li><Check size={14} /> Без затрат и обязательств</li>
-                </ul>
-                <ArrowLink href="#contact">Загрузить видео для проверки</ArrowLink>
+            <div className="offer-steps">
+              <CornerBox className="offer-step">
+                <div className="offer-step-top"><span>01</span><Cable size={18} aria-hidden="true" /></div>
+                <h3>Подключение</h3>
+                <strong>от 10 000 ₽</strong>
+                <span className="offer-when">Разово · точка с 1 камерой</span>
+                <p>Подключаем видеопоток, настраиваем рабочую зону и передачу событий в приложение. Итог зависит от числа камер и сложности подключения.</p>
               </CornerBox>
-
-              <CornerBox className="price-card price-training">
-                <span className="price-step">ШАГ 2 · РАЗОВАЯ НАСТРОЙКА</span>
-                <h3>Обучение модели под ваши задачи</h3>
-                <strong>7 000 – 15 000 <small>₽ / позиция</small></strong>
-                <p className="price-note">Разово · чем больше позиций, тем дешевле</p>
-                <ul className="price-checks">
-                  <li><Check size={14} /> Позиция детекции — один класс объекта (кола ≠ пепси)</li>
-                  <li><Check size={14} /> 500 одинаковых стаканов = одна позиция</li>
-                  <li><Check size={14} /> Обучение, настройка и калибровка камеры включены</li>
-                  <li><Check size={14} /> Скидки при объёме от 10 позиций</li>
-                </ul>
-                <ArrowLink href="#contact">Рассчитать стоимость</ArrowLink>
+              <span className="offer-plus" aria-hidden="true"><Plus size={14} /></span>
+              <CornerBox className="offer-step">
+                <div className="offer-step-top"><span>02</span><ScanLine size={18} aria-hidden="true" /></div>
+                <h3>Обучение модели</h3>
+                <strong>По числу позиций</strong>
+                <span className="offer-when">Разово</span>
+                <p>Одна позиция — один вид продукта в отдельном счётчике. Борщ и солянка — две позиции, если их нужно различать. Сто порций одного блюда — одна позиция.</p>
               </CornerBox>
-
-              <CornerBox className="price-card price-service">
-                <span className="price-step">ШАГ 3 · ЗАПУСК</span>
-                <h3>Эксплуатация системы</h3>
-                <strong>0 ₽ <small>или от 8 000 ₽/мес</small></strong>
-                <p className="price-note">Система должна где-то работать — вы выбираете где</p>
-                <ul className="price-checks">
-                  <li><Check size={14} /> Запускаете сами — 0 ₽ в месяц на своём сервере</li>
-                  <li><Check size={14} /> Или на наших серверах — от 8 000 ₽/мес</li>
-                  <li><Check size={14} /> Полное сопровождение, мониторинг и алерты</li>
-                  <li><Check size={14} /> Ежемесячный отчёт включён</li>
-                </ul>
-                <ArrowLink href="#contact" orange>Выбрать вариант</ArrowLink>
+              <span className="offer-plus" aria-hidden="true"><Plus size={14} /></span>
+              <CornerBox className="offer-step">
+                <div className="offer-step-top"><span>03</span><Server size={18} aria-hidden="true" /></div>
+                <h3>Обслуживание</h3>
+                <strong>По числу камер</strong>
+                <span className="offer-when">Ежемесячно</span>
+                <p>Наши серверы, обработка видео, личный кабинет, события со скриншотами, отчёты и поддержка.</p>
               </CornerBox>
             </div>
 
-            <div className="pricing-tables">
-              <CornerBox className="rate-card rate-setup">
-                <span className="price-step">РАЗОВАЯ НАСТРОЙКА</span>
-                <h3>Цена за позицию детекции</h3>
-                <p className="rate-lead">
-                  Работа заключается в обучении ИИ под ваш объект, ракурс и освещение.
-                  Чем больше позиций заказываете сразу — тем ниже цена каждой.
-                </p>
-                <div className="rate-rows">
-                  <div className="rate-row"><span>1–9 позиций</span><b>15 000 ₽ каждая</b></div>
-                  <div className="rate-row"><span>10–19 позиций</span><b>10 000 ₽ каждая</b></div>
-                  <div className="rate-row"><span>20+ позиций</span><b>7 000 ₽ каждая</b></div>
+            <div className="offer-split">
+              <CornerBox className="offer-panel">
+                <div className="offer-panel-head">
+                  <span className="offer-icon"><Utensils size={16} aria-hidden="true" /></span>
+                  <div>
+                    <h3>Кухня: обучение по позициям</h3>
+                    <p>Чем больше позиций в одном заказе, тем дешевле каждая следующая.</p>
+                  </div>
                 </div>
-                <p className="rate-examples">5 позиций = 75 000 ₽ · 10 позиций = 100 000 ₽</p>
-                <p className="rate-footnote">Вы никогда не платите больше за объём — шкала только снижает цену.</p>
+                <div className="offer-rows">
+                  <div className="offer-row"><span>Первые 10</span><b>5 000 ₽</b></div>
+                  <div className="offer-row"><span>С 11-й по 20-ю</span><b>4 000 ₽</b></div>
+                  <div className="offer-row"><span>С 21-й по 50-ю</span><b>3 000 ₽</b></div>
+                  <div className="offer-row"><span>Свыше 50</span><b>Индивидуально</b></div>
+                </div>
+                <p className="offer-hint"><Check size={14} aria-hidden="true" /> Скидка применяется к позициям внутри каждой ступени.</p>
+                <div className="offer-sums">
+                  <div><span>10 позиций</span><b>50 000 ₽</b></div>
+                  <div><span>20 позиций</span><b>90 000 ₽</b></div>
+                  <div className="is-lead"><span>50 позиций</span><b>180 000 ₽</b><small>10×5 000 + 10×4 000 + 30×3 000</small></div>
+                </div>
               </CornerBox>
 
-              <CornerBox className="rate-card rate-monthly">
-                <span className="price-step">ЕЖЕМЕСЯЧНОЕ ОБСЛУЖИВАНИЕ</span>
-                <h3>Цена за набор камер</h3>
-                <p className="rate-lead">
-                  Наши расходы — это обработка видео, хранение событий, мониторинг и поддержка.
-                  Платёжка зависит от числа камер, а не от количества позиций.
-                </p>
-                <div className="rate-rows">
-                  <div className="rate-row"><span>1 камера</span><b>от 8 000 ₽/мес</b></div>
-                  <div className="rate-row"><span>2 камеры</span><b>от 12 000 ₽/мес</b></div>
-                  <div className="rate-row"><span>3 камеры</span><b>от 16 000 ₽/мес</b></div>
-                  <div className="rate-row"><span>4–7 камер</span><b>по запросу</b></div>
-                  <div className="rate-row"><span>8+ камер · несколько площадок</span><b>индивидуально</b></div>
+              <CornerBox className="offer-panel offer-panel-soft">
+                <div className="offer-panel-head">
+                  <span className="offer-icon"><Flame size={16} aria-hidden="true" /></span>
+                  <div>
+                    <h3>Однотипный продукт</h3>
+                    <p>Фиксированное обучение, если продукты считаются одной категорией.</p>
+                  </div>
                 </div>
-                <p className="rate-examples">Или платите 0 ₽: разверните на своём оборудовании</p>
-                <p className="rate-footnote">Точную стоимость называем после проверки вашей камеры и сценария.</p>
+                <p className="offer-figure"><b>25 000 ₽</b><span>разово · кальяны одной категории</span></p>
+                <p className="offer-copy">Настраиваем распознавание и правила фиксации события в согласованной рабочей зоне. Раздельный подсчёт новых типов оценивается отдельно.</p>
+                <p className="offer-hint"><Info size={14} aria-hidden="true" /> 100 одинаковых кальянов — одна категория, а не 100 позиций.</p>
               </CornerBox>
             </div>
 
-            <div className="pricing-closing">
-              <p>
-                Все цены указаны без НДС. Для резидентов Москвы и МО — выезд инженера в течение 48 часов.
-              </p>
-              <button className="btn-primary" onClick={scrollToContact}>
-                Получить бесплатный аудит за 24 часа <ArrowUpRight size={16} />
-              </button>
+            <CornerBox className="offer-panel offer-service">
+              <div className="offer-panel-head">
+                <span className="offer-icon"><Server size={16} aria-hidden="true" /></span>
+                <div>
+                  <h3>Обслуживание на наших серверах</h3>
+                  <p>Базовая сетка для кухни и кальянных на одной точке.</p>
+                </div>
+              </div>
+              <div className="offer-cams">
+                <div><Camera size={16} aria-hidden="true" /><span>1 камера</span><b>15 000 ₽<small>/мес</small></b></div>
+                <div><Camera size={16} aria-hidden="true" /><span>2 камеры</span><b>20 000 ₽<small>/мес</small></b></div>
+                <div><Camera size={16} aria-hidden="true" /><span>3 камеры</span><b>25 000 ₽<small>/мес</small></b></div>
+              </div>
+              <p className="offer-copy">От 4 камер — индивидуальный расчёт. Стоимость фиксируем после проверки потоков и согласования режима обработки. Срок хранения событий указываем в предложении.</p>
+            </CornerBox>
+
+            <CornerBox className="offer-shawarma">
+              <div>
+                <span className="offer-icon"><ChefHat size={16} aria-hidden="true" /></span>
+                <h3>Шаурма: готовая модель</h3>
+                <p className="offer-figure"><b>13 000 ₽</b><span>/мес · 1 камера</span></p>
+              </div>
+              <div className="offer-shawarma-side">
+                <p>Подключение — от 10 000 ₽ разово.</p>
+                <p>Для стандартного сценария используем готовую модель. Нужно ли дополнительное обучение, определяем по вашему видео и согласуем до начала работ.</p>
+              </div>
+            </CornerBox>
+
+            <div className="offer-launch">
+              <div className="offer-panel-head">
+                <span className="offer-icon"><Calculator size={16} aria-hidden="true" /></span>
+                <div>
+                  <h3>Сколько стоит запуск</h3>
+                  <p>Подключение, обучение и первый месяц обслуживания.</p>
+                </div>
+              </div>
+              <div className="offer-table-wrap">
+                <table className="offer-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Пример</th>
+                      <th scope="col">Подключение</th>
+                      <th scope="col">Обучение</th>
+                      <th scope="col">В месяц</th>
+                      <th scope="col">Запуск с первым месяцем</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Шаурма, готовая модель, 1 камера</th>
+                      <td data-label="Подключение">От 10 000 ₽</td>
+                      <td data-label="Обучение">Не требуется</td>
+                      <td data-label="В месяц">13 000 ₽</td>
+                      <td data-label="Запуск" className="is-total">От 23 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Кальянная, одна категория, 1 камера</th>
+                      <td data-label="Подключение">От 10 000 ₽</td>
+                      <td data-label="Обучение">25 000 ₽</td>
+                      <td data-label="В месяц">15 000 ₽</td>
+                      <td data-label="Запуск" className="is-total">От 50 000 ₽</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Кухня, 50 позиций, 1 камера</th>
+                      <td data-label="Подключение">От 10 000 ₽</td>
+                      <td data-label="Обучение">180 000 ₽</td>
+                      <td data-label="В месяц">15 000 ₽</td>
+                      <td data-label="Запуск" className="is-total">От 205 000 ₽</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="offer-copy">Число камер не умножает автоматически стоимость обучения тех же продуктов. Дополнительная настройка под новый ракурс или освещение оценивается отдельно.</p>
+              <p className="offer-copy">Возможность различать выбранные продукты подтверждаем по видео. Камеры, монтаж и интеграции с кассой не входят в указанные суммы.</p>
+            </div>
+
+            <div className="offer-cta">
+              <div>
+                <h3>Рассчитать мой проект</h3>
+                <p>Пришлите видео рабочей зоны, список продуктов для подсчёта и количество камер. Подготовим расчёт подключения, обучения и ежемесячного обслуживания.</p>
+              </div>
+              <button className="btn-primary" onClick={scrollToContact}>Отправить видео и получить расчёт <ArrowUpRight size={16} /></button>
             </div>
           </div>
         </section>
